@@ -1,0 +1,266 @@
+/* aluno.css - Estilos para área do aluno */
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #f39c12;
+    --light: #ecf0f1;
+    --success: #27ae60;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+}
+
+.aluno-header {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.aluno-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.aluno-nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.aluno-nav a:hover {
+    color: var(--secondary);
+}
+
+.logout-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background: #e67e22;
+}
+
+.aluno-main {
+    padding: 40px 0;
+    background: #f8f9fa;
+    min-height: calc(100vh - 80px);
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.welcome-banner h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    font-size: 1.5rem;
+}
+
+.stat-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+    color: var(--text);
+}
+
+.stat-info p {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.cursos-section, .perfil-section {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.cursos-section h2, .perfil-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--primary);
+}
+
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.curso-card {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 25px;
+    transition: transform 0.3s;
+    border-left: 4px solid var(--secondary);
+}
+
+.curso-card:hover {
+    transform: translateY(-3px);
+}
+
+.curso-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.curso-card p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.curso-status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-completed {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.continue-btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.continue-btn:hover {
+    background: #2980b9;
+}
+
+.perfil-card {
+    background: var(--light);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.info-group {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-group label {
+    font-weight: 600;
+    min-width: 120px;
+    color: var(--text);
+}
+
+.info-group span {
+    color: var(--text-light);
+}
+
+/* Navegação ativa */
+.nav-link.active {
+    color: var(--secondary);
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .aluno-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .welcome-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-group {
+        flex-direction: column;
+    }
+    
+    .info-group label {
+        margin-bottom: 5px;
+    }
+}

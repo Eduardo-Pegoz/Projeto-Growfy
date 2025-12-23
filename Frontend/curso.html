@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 POLÍTICAS DE SEGURANÇA -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
+        style-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
+        font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        connect-src 'self';
+        frame-ancestors 'none';
+    ">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <title>Growfy - Curso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/course-page.css">
+</head>
+<body>
+    <!-- Barra de Progresso de Rolagem -->
+    <div class="scroll-progress"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-main">
+                            Grow<span>fy</span>
+                        </div>
+                        <div class="slogan">crescimento financeiro personalizado</div>
+                    </div>
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="index.html#courses" class="nav-link">Cursos</a></li>
+                        <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+                        <li><a href="#" class="student-area-btn"><i class="fas fa-graduation-cap"></i> Área do Aluno</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="course-hero">
+        <div class="container">
+            <div class="course-hero-content">
+                <div class="course-hero-image">
+                    <div class="course-icon" id="courseMainIcon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+                <div class="course-hero-text">
+                    <h1 id="courseTitle">Carregando...</h1>
+                    <p id="courseDescription">Carregando descrição do curso...</p>
+                    <div class="course-price-large">
+                        R$ <span id="coursePrice">--,--</span>
+                        <span class="old-price-large">R$ <span id="courseOldPrice">--,--</span></span>
+                    </div>
+                    <a href="#purchase" class="purchase-button nav-link" data-target="purchase">Comprar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-details">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Aprender</h2>
+            <div class="details-grid" id="courseDetails">
+                <!-- Conteúdo carregado dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <section class="course-content">
+        <div class="container">
+            <h2 class="section-title">Conteúdo do Curso</h2>
+            <div class="modules" id="courseModules">
+                <!-- Módulos carregados dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
+            <div class="testimonials-grid" id="courseTestimonials">
+                <!-- Depoimentos carregados dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-list" id="courseFaq">
+                <!-- FAQ carregado dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <section id="purchase" class="course-hero" style="background: var(--light);">
+        <div class="container">
+            <div class="course-hero-content">
+                <div class="course-hero-text" style="text-align: center; flex: 100%;">
+                    <h1>Comece Sua Jornada Financeira Hoje</h1>
+                    <p>Invista no seu futuro e transforme sua relação com o dinheiro. Garanta sua vaga com condições especiais.</p>
+                    <div class="course-price-large">
+                        R$ <span id="purchasePrice">--,--</span>
+                        <span class="old-price-large">R$ <span id="purchaseOldPrice">--,--</span></span>
+                    </div>
+                    <a href="#" class="purchase-button" style="background: var(--success);" id="purchaseLink">Finalizar Compra</a>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Pagamento seguro • Acesso imediato</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Growfy</h3>
+                    <p>Oferecemos cursos de finanças pessoais e investimentos para ajudar você a alcançar liberdade financeira.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/growfy" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#courses">Cursos</a></li>
+                        <li><a href="index.html#about">Sobre Nós</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Cursos Populares</h3>
+                    <ul class="footer-links">
+                        <li><a href="curso.html?course=guia-financeiro">Guia Financeiro 2025</a></li>
+                        <li><a href="curso.html?course=investimentos-iniciantes">Investimentos para Iniciantes</a></li>
+                        <li><a href="curso.html?course=economia-inteligente">Economia Inteligente</a></li>
+                        <li><a href="curso.html?course=financas-imobiliarias">Finanças Imobiliárias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp"></i> (11) 99999-9999</li>
+                        <li><a href="#" onclick="openContactModal(); return false;" style="color: var(--light); text-decoration: none;">
+                            <i class="fas fa-envelope"></i> Enviar Mensagem
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Growfy - Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🔒 FORMULÁRIO DE CONTATO SEGURO -->
+    <div id="contactModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%;">
+            <h3 style="margin-bottom: 20px;">Entre em Contato</h3>
+            <form id="contactForm" onsubmit="return validateContactForm(event)">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Nome:</label>
+                    <input type="text" name="name" required 
+                           pattern="[A-Za-zÀ-ÿ\s]{2,50}" 
+                           title="Nome deve conter apenas letras (2-50 caracteres)"
+                           style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email:</label>
+                    <input type="email" name="email" required 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Digite um email válido"
+                           style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Mensagem:</label>
+                    <textarea name="message" required 
+                              minlength="10" maxlength="500"
+                              title="Mensagem deve ter entre 10 e 500 caracteres"
+                              style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; height: 120px; resize: vertical;"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button type="button" onclick="closeContactModal()" style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; background: #f8f9fa;">Cancelar</button>
+                    <button type="submit" style="padding: 10px 20px; border: none; border-radius: 5px; background: var(--accent); color: white;">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/course-loader.js"></script>
+</body>
+</html>

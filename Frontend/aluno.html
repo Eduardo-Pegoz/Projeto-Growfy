@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 POLÍTICAS DE SEGURANÇA -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
+        style-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
+        font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        connect-src 'self' http://localhost:3000;
+        frame-ancestors 'none';
+    ">
+    
+    <title>Área do Aluno - Growfy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/aluno.css">
+</head>
+<body>
+    <header class="aluno-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-main">Grow<span>fy</span></div>
+                        <div class="slogan">área do aluno</div>
+                    </div>
+                </a>
+                <nav class="aluno-nav">
+                    <ul>
+                        <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                        <li><a href="#cursos" class="nav-link">Meus Cursos</a></li>
+                        <li><a href="#perfil" class="nav-link">Meu Perfil</a></li>
+                        <li><button id="logoutBtn" class="logout-btn">Sair</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="aluno-main">
+        <div class="container">
+            <!-- Dashboard -->
+            <section id="dashboard" class="dashboard-section">
+                <div class="welcome-banner">
+                    <h1>Bem-vindo, <span id="userName">Aluno</span>! 👋</h1>
+                    <p>Continue sua jornada de aprendizado financeiro</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Meus Cursos</h3>
+                            <p id="totalCursos">0 cursos</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Concluídos</h3>
+                            <p id="cursosConcluidos">0 cursos</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Em Andamento</h3>
+                            <p id="cursosAndamento">0 cursos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meus Cursos -->
+            <section id="cursos" class="cursos-section" style="display: none;">
+                <h2>Meus Cursos</h2>
+                <div id="cursosList" class="cursos-grid">
+                    <!-- Cursos serão carregados dinamicamente -->
+                </div>
+            </section>
+
+            <!-- Meu Perfil -->
+            <section id="perfil" class="perfil-section" style="display: none;">
+                <h2>Meu Perfil</h2>
+                <div class="perfil-card">
+                    <div class="perfil-info">
+                        <div class="info-group">
+                            <label>Nome:</label>
+                            <span id="profileName">Carregando...</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Email:</label>
+                            <span id="profileEmail">Carregando...</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Membro desde:</label>
+                            <span id="profileSince">Carregando...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/aluno.js"></script>
+</body>
+</html>

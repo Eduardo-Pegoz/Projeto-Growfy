@@ -1,0 +1,940 @@
+/* course-page.css - CSS atualizado com FAQ melhorado e navegação suave */
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #f39c12;
+    --light: #ecf0f1;
+    --success: #27ae60;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --gradient: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVEGAÇÃO SUAVE ADICIONADA */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Barra de Progresso de Rolagem */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+    z-index: 1000;
+    transition: width 0.1s ease;
+}
+
+/* Header Corrigido */
+header {
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary);
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.logo-main span {
+    color: var(--secondary);
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+    background: var(--gradient);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-icon::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%);
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.slogan {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-top: 2px;
+    line-height: 1.2;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* Efeito de sublinhado para navegação */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: var(--secondary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.student-area-btn {
+    background: var(--accent);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.student-area-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Course Hero Section */
+.course-hero {
+    padding: 60px 0;
+    background: white;
+    border-radius: 0 0 15px 15px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.course-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.course-hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.course-icon {
+    width: 200px;
+    height: 200px;
+    background: var(--gradient);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-icon:hover {
+    transform: scale(1.05);
+}
+
+.course-hero-text {
+    flex: 1;
+}
+
+.course-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.course-hero p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.course-price-large {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.old-price-large {
+    text-decoration: line-through;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.purchase-button {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+}
+
+.purchase-button:hover {
+    background: #e67e22;
+    transform: translateY(-3px);
+}
+
+/* Course Details Section - 3 Elementos */
+.course-details {
+    padding: 60px 0;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.detail-card {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.detail-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    margin: 0 auto 20px;
+}
+
+.detail-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.detail-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Course Content Section - Módulos Corrigidos */
+.course-content {
+    padding: 60px 0;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.modules {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.module {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.module:hover {
+    border-color: var(--secondary);
+}
+
+.module-header {
+    background: var(--light);
+    padding: 18px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.module-header:hover {
+    background: #e3e8e8;
+}
+
+.module-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.module-icon {
+    color: var(--secondary);
+    transition: transform 0.3s;
+}
+
+.module.active .module-icon {
+    transform: rotate(180deg);
+}
+
+.module-lessons {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* CORREÇÃO APLICADA: Altura aumentada e scroll adicionado */
+.module.active .module-lessons {
+    padding: 20px 25px;
+    max-height: 400px; /* Aumentado de 300px */
+    overflow-y: auto; /* Scroll quando necessário */
+}
+
+/* Estilização do scroll para melhor visualização */
+.module-lessons::-webkit-scrollbar {
+    width: 6px;
+}
+
+.module-lessons::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.module-lessons::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 3px;
+}
+
+.module-lessons::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+.lesson {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.lesson:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.lesson:last-child {
+    border-bottom: none;
+}
+
+.lesson-icon {
+    color: var(--success);
+    margin-right: 15px;
+    font-size: 0.9rem;
+    min-width: 20px;
+}
+
+.lesson-title {
+    color: var(--text);
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+/* Testimonials Section - 3 Comentários */
+.testimonials {
+    padding: 60px 0;
+    background: white;
+    border-radius: 15px;
+    margin: 40px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card::before {
+    content: "\201C";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 0.05);
+    font-family: sans-serif;
+}
+
+.testimonial-text {
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.author-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.author-info p {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* FAQ Section Melhorada - DESIGN ATUALIZADO */
+.faq {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 20px;
+    margin: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #e1e5e9;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+    transform: translateY(-2px);
+}
+
+.faq-question {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.faq-question:hover {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+}
+
+.faq-question h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+    flex: 1;
+    padding-right: 25px;
+    line-height: 1.5;
+}
+
+.faq-icon {
+    color: var(--secondary);
+    transition: all 0.4s ease;
+    margin-left: 15px;
+    font-size: 1.3rem;
+    min-width: 25px;
+    text-align: center;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+    color: var(--accent);
+}
+
+.faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: white;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer e Edge */
+}
+
+.faq-answer::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+.faq-item.active .faq-answer {
+    padding: 30px;
+    max-height: none; /* Remove limite de altura */
+    overflow-y: visible; /* Remove scroll */
+    overflow: visible; /* Garante que não haverá barra de rolagem */
+}
+
+.faq-answer-content {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.faq-answer-content p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.faq-answer-content p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer-content ul, .faq-answer-content ol {
+    margin: 20px 0;
+    padding-left: 25px;
+}
+
+.faq-answer-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.faq-answer-content strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.faq-answer-content em {
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Estado ativo do FAQ */
+.faq-item.active {
+    border-color: var(--secondary);
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.2);
+}
+
+.faq-item.active .faq-question {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-bottom: 2px solid var(--secondary);
+}
+
+/* Indicador visual */
+.faq-item.active .faq-question::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+}
+
+/* Footer */
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 40px 0 15px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    background: var(--secondary);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    font-size: 0.85rem;
+}
+
+/* Error Container */
+.error-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.error-container h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.error-container p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+/* Responsividade Corrigida */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        flex-direction: row;
+        text-align: center;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .course-hero-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .course-hero h1 {
+        font-size: 2rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .student-area-btn {
+        margin-top: 10px;
+    }
+
+    .module-header {
+        padding: 15px 20px;
+    }
+
+    .module-title {
+        font-size: 1rem;
+    }
+
+    .faq-question {
+        padding: 15px 20px;
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .course-hero {
+        padding: 40px 0;
+    }
+
+    .course-icon {
+        width: 150px;
+        height: 150px;
+        font-size: 4rem;
+    }
+
+    .course-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .course-price-large {
+        font-size: 1.8rem;
+    }
+
+    .old-price-large {
+        font-size: 1.2rem;
+    }
+
+    .purchase-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}

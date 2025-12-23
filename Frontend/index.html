@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 POLÍTICAS DE SEGURANÇA -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
+        style-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
+        font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        connect-src 'self';
+        frame-ancestors 'none';
+    ">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <title>Growfy - Crescimento Financeiro Personalizado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+    <!-- Barra de Progresso de Rolagem -->
+    <div class="scroll-progress"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#hero" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-main">
+                            Grow<span>fy</span>
+                        </div>
+                        <div class="slogan">crescimento financeiro personalizado</div>
+                    </div>
+                </a>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#hero" class="nav-link" data-target="_hero">Início</a></li>
+                        <li><a href="#courses" class="nav-link" data-target="_courses">Cursos</a></li>
+                        <li><a href="#about" class="nav-link" data-target="_about">Sobre</a></li>
+                        <li><a href="#" class="student-area-btn"><i class="fas fa-graduation-cap"></i> Área do Aluno</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Invista no seu futuro financeiro</h1>
+            <p>Descubra cursos especializados para transformar sua relação com o dinheiro e alcançar liberdade financeira</p>
+            <a href="#courses" class="cta-button nav-link" data-target="_courses">Explorar Cursos</a>
+        </div>
+    </section>
+
+    <section class="instagram">
+        <div class="container">
+            <h2>Siga nosso Instagram</h2>
+            <p>Dicas diárias e melhores indicações dos nossos cursos</p>
+            <a href="https://instagram.com/growfy.fin" class="instagram-button" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> @growfy.fin
+            </a>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Nossos Cursos em Destaque</h2>
+            <div class="courses-grid">
+                <!-- Curso 1 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Guia Financeiro 2025</h3>
+                        <p class="course-description">Como organizar sua vida financeira e começar a investir com pouco.</p>
+                        <div class="course-features">
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Mais de 30 páginas de conteúdo</div>
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Planilhas exclusivas</div>
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Acesso imediato</div>
+                        </div>
+                        <div class="course-price">
+                            <div class="price">R$ 47,90 <span class="old-price">R$ 72,90</span></div>
+                            <a href="curso.html?course=guia-financeiro" class="course-button">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Investimentos para Iniciantes</h3>
+                        <p class="course-description">Aprenda os fundamentos para começar a investir com segurança.</p>
+                        <div class="course-features">
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> 8 módulos completos</div>
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Estratégias comprovadas</div>
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Suporte especializado</div>
+                        </div>
+                        <div class="course-price">
+                            <div class="price">R$ 67,00 <span class="old-price">R$ 127,00</span></div>
+                            <a href="curso.html?course=investimentos-iniciantes" class="course-button">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Economia Inteligente</h3>
+                        <p class="course-description">Descubra como economizar sem sacrificar sua qualidade de vida.</p>
+                        <div class="course-features">
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Técnicas práticas</div>
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Planilhas de controles</div>
+                            <div class="course-feature"><i class="fas fa-check-circle"></i> Bônus exclusivos</div>
+                        </div>
+                        <div class="course-price">
+                            <div class="price">R$ 37,00 <span class="old-price">R$ 77,00</span></div>
+                            <a href="curso.html?course=economia-inteligente" class="course-button">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Cursos Adicionais -->
+            <div class="more-courses">
+                <details>
+                    <summary>
+                        <span>Ver mais cursos</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </summary>
+                    <div class="courses-grid additional-courses">
+                        <!-- Curso 4 -->
+                        <div class="course-card">
+                            <div class="course-image">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Finanças Imobiliárias</h3>
+                                <p class="course-description">Aprenda a investir no mercado imobiliário mesmo com pouco capital.</p>
+                                <div class="course-features">
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Análise de mercado</div>
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Estratégias de investimento</div>
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Case studies</div>
+                                </div>
+                                <div class="course-price">
+                                    <div class="price">R$ 87,00 <span class="old-price">R$ 147,00</span></div>
+                                    <a href="curso.html?course=financas-imobiliarias" class="course-button">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Curso 5 -->
+                        <div class="course-card">
+                            <div class="course-image">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Mindset Financeiro</h3>
+                                <p class="course-description">Transforme sua mentalidade para atrair prosperidade e abundância.</p>
+                                <div class="course-features">
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Técnicas de reprogramação</div>
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Exercícios práticos</div>
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Meditações guiadas</div>
+                                </div>
+                                <div class="course-price">
+                                    <div class="price">R$ 57,00 <span class="old-price">R$ 97,00</span></div>
+                                    <a href="curso.html?course=mindset-financeiro" class="course-button">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Curso 6 -->
+                        <div class="course-card">
+                            <div class="course-image">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Investimentos Internacionais</h3>
+                                <p class="course-description">Diversifique seus investimentos além das fronteiras do Brasil.</p>
+                                <div class="course-features">
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Mercado global</div>
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Estratégias de proteção</div>
+                                    <div class="course-feature"><i class="fas fa-check-circle"></i> Guia passo a passo</div>
+                                </div>
+                                <div class="course-price">
+                                    <div class="price">R$ 77,00 <span class="old-price">R$ 137,00</span></div>
+                                    <a href="curso.html?course=investimentos-internacionais" class="course-button">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-testimonials" id="about">
+        <div class="container">
+            <h2 class="section-title">Jornada de Transformação Financeira</h2>
+            <p class="section-subtitle">Mais de 1800 alunos já transformaram suas vidas financeiras conosco</p>
+            <div class="about-content">
+                <!-- Depoimentos -->
+                <div class="testimonials-section">
+                    <h3>O que nossos alunos dizem</h3>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"O curso mudou completamente minha relação com o dinheiro. Em 3 meses já consegui criar minha reserva de emergência!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">M</div>
+                                <div class="author-info">
+                                    <h4>Mariana Silva</h4>
+                                    <p>Aluna do Guia Financeiro</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Finalmente entendi como investir de forma simples e segura. As planilhas e o passo a passo foram essenciais!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">R</div>
+                                <div class="author-info">
+                                    <h4>Ricardo Oliveira</h4>
+                                    <p>Aluno de Investimentos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"A metodologia de ensino é incrível. Em 2 meses já apliquei as estratégias e vi resultados reais!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">A</div>
+                                <div class="author-info">
+                                    <h4>Ana Costa</h4>
+                                    <p>Aluna do Mindset Financeiro</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sobre a Empresa -->
+                <div class="about-section">
+                    <h3>Nossa Missão</h3>
+                    <p class="about-description">Democratizar a educação financeira no Brasil, transformando a relação das pessoas com o dinheiro através de conteúdos acessíveis, práticos e transformadores.</p>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Educação Acessível</h4>
+                            <p>Conteúdo claro e direto, sem linguagem técnica desnecessária</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <h4>Transparência</h4>
+                            <p>Honestidade em cada recomendação e estratégia</p>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas -->
+                    <div class="stats-section">
+                        <div class="stat">
+                            <div class="stat-number" data-count="5000">1800+</div>
+                            <div class="stat-label">Alunos Transformados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="97">98,8%</div>
+                            <div class="stat-label">Taxa de Satisfação</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="18">6</div>
+                            <div class="stat-label">Cursos Especializados</div>
+                        </div>
+                    </div>
+
+                    <div class="cta-container">
+                        <a href="#courses" class="cta-button nav-link" data-target="_courses">Comece Sua Jornada</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Growfy</h3>
+                    <p>Oferecemos cursos de finanças pessoais e investimentos para ajudar você a alcançar liberdade financeira.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/growfy" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero" class="nav-link" data-target="_hero">Início</a></li>
+                        <li><a href="#courses" class="nav-link" data-target="_courses">Cursos</a></li>
+                        <li><a href="#about" class="nav-link" data-target="_about">Sobre Nós</a></li>
+                        <li><a href="#">Depoimentos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Cursos Populares</h3>
+                    <ul class="footer-links">
+                        <li><a href="curso.html?course=guia-financeiro">Guia Financeiro 2025</a></li>
+                        <li><a href="curso.html?course=investimentos-iniciantes">Investimentos para Iniciantes</a></li>
+                        <li><a href="curso.html?course=economia-inteligente">Economia Inteligente</a></li>
+                        <li><a href="curso.html?course=financas-imobiliarias">Finanças Imobiliárias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp"></i> (11) 99999-9999</li>
+                        <li><a href="#" onclick="openContactModal(); return false;" style="color: var(--light); text-decoration: none;">
+                            <i class="fas fa-envelope"></i> Enviar Mensagem
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Growfy - Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🔒 FORMULÁRIO DE CONTATO SEGURO -->
+    <div id="contactModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%;">
+            <h3 style="margin-bottom: 20px;">Entre em Contato</h3>
+            <form id="contactForm" onsubmit="return validateContactForm(event)">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Nome:</label>
+                    <input type="text" name="name" required 
+                           pattern="[A-Za-zÀ-ÿ\s]{2,50}" 
+                           title="Nome deve conter apenas letras (2-50 caracteres)"
+                           style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email:</label>
+                    <input type="email" name="email" required 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           title="Digite um email válido"
+                           style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Mensagem:</label>
+                    <textarea name="message" required 
+                              minlength="10" maxlength="500"
+                              title="Mensagem deve ter entre 10 e 500 caracteres"
+                              style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; height: 120px; resize: vertical;"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button type="button" onclick="closeContactModal()" style="padding: 10px 20px; border: 1px solid #ddd; border-radius: 5px; background: #f8f9fa;">Cancelar</button>
+                    <button type="submit" style="padding: 10px 20px; border: none; border-radius: 5px; background: var(--accent); color: white;">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
