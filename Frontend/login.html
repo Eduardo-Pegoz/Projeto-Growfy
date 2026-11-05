@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar - Growfy</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <main class="auth-card">
+        <a class="brand" href="index.html">Grow<span>fy</span></a>
+        <h1>Entrar na sua conta</h1>
+        <p>Acesse seus cursos e acompanhe sua jornada.</p>
+        <form id="loginForm" novalidate>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="72">
+            <button type="submit">Entrar</button>
+            <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
+        </form>
+        <button id="showPasswordReset" class="text-button" type="button">Esqueci minha senha</button>
+        <form id="passwordResetRequestForm" class="hidden" novalidate>
+            <label for="resetEmail">E-mail da conta</label>
+            <input id="resetEmail" name="email" type="email" autocomplete="email" required maxlength="254">
+            <button type="submit">Enviar instruções</button>
+            <p id="resetMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+        <p>Ainda não tem conta? <a href="register.html">Cadastre-se</a></p>
+        <a href="index.html">Voltar para a página inicial</a>
+    </main>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

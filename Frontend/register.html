@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta - Growfy</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <main class="auth-card">
+        <a class="brand" href="index.html">Grow<span>fy</span></a>
+        <h1>Crie sua conta</h1>
+        <p>Use seus dados para acessar a área do aluno.</p>
+        <form id="registerForm" novalidate>
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" required minlength="12" maxlength="72">
+            <small>Use pelo menos 12 caracteres.</small>
+            <button type="submit">Criar conta</button>
+            <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
+        </form>
+        <p>Já tem conta? <a href="login.html">Entrar</a></p>
+        <a href="index.html">Voltar para a página inicial</a>
+    </main>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

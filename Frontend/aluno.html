@@ -3,18 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 🔒 POLÍTICAS DE SEGURANÇA -->
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
-        style-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.googleapis.com 'unsafe-inline';
-        font-src 'self' https://cdnjs.cloudflare.com/ajax/libs/ https://fonts.gstatic.com;
-        img-src 'self' data: https:;
-        connect-src 'self' http://localhost:3000;
-        frame-ancestors 'none';
-    ">
-    
     <title>Área do Aluno - Growfy</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -47,6 +35,7 @@
 
     <main class="aluno-main">
         <div class="container">
+            <p id="alunoMessage" role="alert" aria-live="polite"></p>
             <!-- Dashboard -->
             <section id="dashboard" class="dashboard-section">
                 <div class="welcome-banner">
@@ -116,6 +105,7 @@
         </div>
     </main>
 
+    <script src="js/config.js"></script>
     <script src="js/aluno.js"></script>
 </body>
 </html>

@@ -63,9 +63,7 @@ function validateContactForm(event) {
         return false;
     }
     
-    // Simular envio (em produção, enviar para backend)
-    console.log('Dados do formulário:', { name, email, message });
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    alert('O envio de mensagens ainda não está disponível. Entre em contato pelo Instagram.');
     closeContactModal();
     return false;
 }
@@ -81,7 +79,7 @@ const courseData = {
         features: [
             'Mais de 30 páginas de conteúdo',
             'Planilhas exclusivas',
-            'Acesso imediato',
+            'Acesso após confirmação da compra',
             'Atualizações gratuitas',
             'Suporte especializado',
             'Certificado de conclusão'
@@ -196,7 +194,7 @@ const courseData = {
                 answer: '<strong>Completamente responsivo!</strong> O curso funciona perfeitamente em qualquer dispositivo.'
             }
         ],
-        purchaseLink: '/processar-pagamento?curso=guia-financeiro'
+        purchaseLink: '#purchase'
     },
     'investimentos-iniciantes': {
         title: 'Investimentos para Iniciantes',
@@ -316,7 +314,7 @@ const courseData = {
                 answer: 'Sim! Ensinamos tanto <strong>análise fundamentalista</strong> quanto <strong>análise técnica</strong>.'
             }
         ],
-        purchaseLink: '/processar-pagamento?curso=investimentos-iniciantes'
+        purchaseLink: '#purchase'
     },
     'economia-inteligente': {
         title: 'Economia Inteligente',
@@ -435,7 +433,7 @@ const courseData = {
                 answer: 'A maioria dos alunos economiza entre <strong>15% e 30%</strong> de seus gastos mensais.'
             }
         ],
-        purchaseLink: '/processar-pagamento?curso=economia-inteligente'
+        purchaseLink: '#purchase'
     },
     'financas-imobiliarias': {
         title: 'Finanças Imobiliárias',
@@ -552,7 +550,7 @@ const courseData = {
                 answer: 'O investimento imobiliário é considerado um dos <strong>mais seguros</strong> a longo prazo.'
             }
         ],
-        purchaseLink: '/processar-pagamento?curso=financas-imobiliarias'
+        purchaseLink: '#purchase'
     },
     'mindset-financeiro': {
         title: 'Mindset Financeiro',
@@ -669,7 +667,7 @@ const courseData = {
                 answer: 'Alguns alunos relatam mudanças perceptíveis em <strong>2 a 4 semanas</strong>.'
             }
         ],
-        purchaseLink: '/processar-pagamento?curso=mindset-financeiro'
+        purchaseLink: '#purchase'
     },
     'investimentos-internacionais': {
         title: 'Investimentos Internacionais',
@@ -786,7 +784,7 @@ const courseData = {
                 answer: 'É possível começar com valores a partir de <strong>US$ 100</strong> através de ETFs.'
             }
         ],
-        purchaseLink: '/processar-pagamento?curso=investimentos-internacionais'
+        purchaseLink: '#purchase'
     }
 };
 
@@ -997,6 +995,17 @@ function initializePageAnimations() {
 
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    const contactLink = document.getElementById('contactLink');
+    if (contactLink) {
+        contactLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            openContactModal();
+        });
+    }
+    const closeContactButton = document.getElementById('closeContactModal');
+    if (closeContactButton) closeContactButton.addEventListener('click', closeContactModal);
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) contactForm.addEventListener('submit', validateContactForm);
     initializeMobileMenu();
     initializeStatistics();
     initializeAccordions();
